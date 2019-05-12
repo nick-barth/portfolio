@@ -1,0 +1,35 @@
+.home__content {
+  color: #f7faff;
+  padding-top: 5%;
+  padding-left: 5%;
+  position: relative;
+}
+
+.home__title {
+  font-size: 94px;
+  font-weight: bold;
+}
+
+.home__byline__location-container {
+  display: inline-flex;
+  position: relative;
+  text-decoration: line-through;
+}
+
+.home__byline {
+  margin-top: 20px;
+  font-size: 24px;
+  padding-left: 5px;
+  max-width: 400px;
+}
+
+.home__location {
+  position: absolute;
+  top: 24px;
+}
+.home__byline__city {
+  text-decoration: line-through;
+}
+.home__byline__city:last-child {
+  text-decoration: none;
+}

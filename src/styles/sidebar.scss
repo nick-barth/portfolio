@@ -1,0 +1,55 @@
+.sidebar {
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 260px;
+  z-index: 500;
+  background-color: $gray-light;
+  color: $text-gray-dark;
+  padding: 40px;
+}
+
+.sidebar__header {
+  flex: 0 0 25%;
+}
+
+.sidebar__header__name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebar__nav {
+  flex: 0 0 50%;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  display: flex;
+}
+
+.sidebar__nav-links {
+  margin-bottom: 15px;
+}
+
+.sidebar__nav-a {
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: $text-gray-light;
+}
+
+.sidebar__nav-a--active {
+  font-weight: bold;
+  color: $text-gray-dark;
+}
+
+.sidebar__contact {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  flex: 0 0 25%;
+}
