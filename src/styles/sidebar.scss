@@ -39,6 +39,7 @@
   text-decoration: none;
   letter-spacing: 3px;
   color: $text-gray-light;
+  transition: all 250ms ease-in-out;
 }
 
 .sidebar__nav-a--active {
@@ -52,4 +53,24 @@
   -webkit-box-pack: end;
   justify-content: flex-end;
   flex: 0 0 25%;
+}
+
+.sidebar__contact-me {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.sidebar__social {
+  display: flex;
+  margin-top: 20px;
+}
+
+.sidebar__social-item {
+  margin-right: 5px;
+}
+
+.sidebar__social__icon {
+  height: 22px;
+  width: 22px;
+  fill: $text-gray-dark;
 }

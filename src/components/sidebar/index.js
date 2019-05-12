@@ -1,6 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Reddit from "../../assets/svgs/reddit.svg"
+import Instagram from "../../assets/svgs/instagram.svg"
+import LinkedIn from "../../assets/svgs/linkedIn.svg"
+import Github from "../../assets/svgs/github.svg"
+
 export default () => {
   return (
     <div className="sidebar">
@@ -9,7 +14,7 @@ export default () => {
       </div>
       <div className="sidebar__nav">
         <ul>
-          {["home", "work", "tech", "personal", "contact"].map(route => {
+          {["home", "work", "tech", "personal"].map(route => {
             const url = route === "home" ? "" : route
             return (
               <li className="sidebar__nav-links" key={route}>
@@ -25,7 +30,34 @@ export default () => {
           })}
         </ul>
       </div>
-      <div className="sidebar__contact" />
+      <div className="sidebar__contact">
+        <div className="sidebar__contact-me">If you'd like to get in touch</div>
+        <div className="sidebar__contact-me">
+          <a href="mailto:barth.nicholas@gmail.com">barth.nicholas@gmail.com</a>
+        </div>
+        <ul className="sidebar__social">
+          <li className="sidebar__social-item">
+            <a href="https://github.com/nick-barth">
+              <Github className="sidebar__social__icon" />
+            </a>
+          </li>
+          <li className="sidebar__social-item">
+            <a href="https://www.reddit.com/user/nickinkorea">
+              <Reddit className="sidebar__social__icon" />
+            </a>
+          </li>
+          <li className="sidebar__social-item">
+            <a href="https://www.instagram.com/barth.nicholas/">
+              <Instagram className="sidebar__social__icon" />
+            </a>
+          </li>
+          <li className="sidebar__social-item">
+            <a href="https://www.linkedin.com/in/nicholasbarth/">
+              <LinkedIn className="sidebar__social__icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }

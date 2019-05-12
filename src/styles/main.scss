@@ -5,13 +5,12 @@
 @import "tech";
 @import "work";
 @import "personal";
-@import "contact";
 
 //components
 @import "sidebar";
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Halant");
+@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
 
 html,
 body,
@@ -71,7 +70,6 @@ thead,
 tr,
 th,
 td {
-  text-transform: uppercase;
   margin: 0;
   padding: 0;
   border: 0;
@@ -122,5 +120,5 @@ q {
 }
 
 html {
-  font-family: "Halant", serif;
+  font-family: "Libre Baskerville", serif;
 }
