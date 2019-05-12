@@ -10,7 +10,7 @@ export default () => {
       <div className="sidebar__nav">
         <ul>
           {["home", "work", "tech", "personal", "contact"].map(route => {
-            const url = route === "home" ? "/" : route
+            const url = route === "home" ? "" : route
             return (
               <li className="sidebar__nav-links" key={route}>
                 <Link
