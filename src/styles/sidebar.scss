@@ -10,12 +10,13 @@
   width: 260px;
   z-index: 500;
   background-color: $gray-light;
-  color: $text-gray-dark;
+  color: $text-gray-light;
   padding: 40px;
 }
 
 .sidebar__header {
   flex: 0 0 25%;
+  color: $text-gray-dark;
 }
 
 .sidebar__header__name {
@@ -56,7 +57,7 @@
 }
 
 .sidebar__contact-me {
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 5px;
 }
 
@@ -73,4 +74,10 @@
   height: 22px;
   width: 22px;
   fill: $text-gray-dark;
+}
+
+.sidebar__contract-me__link {
+  color: $text-gray-dark;
+  text-decoration: none;
+  font-weight: bold;
 }

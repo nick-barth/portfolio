@@ -33,7 +33,12 @@ export default () => {
       <div className="sidebar__contact">
         <div className="sidebar__contact-me">If you'd like to get in touch</div>
         <div className="sidebar__contact-me">
-          <a href="mailto:barth.nicholas@gmail.com">barth.nicholas@gmail.com</a>
+          <a
+            className="sidebar__contract-me__link"
+            href="mailto:barth.nicholas@gmail.com"
+          >
+            barth.nicholas@gmail.com
+          </a>
         </div>
         <ul className="sidebar__social">
           <li className="sidebar__social-item">

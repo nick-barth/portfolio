@@ -19,7 +19,7 @@ export default props => {
             Welcome to the personal site of Nick Barth.
           </div>
           <div className="home__byline">
-            Fullstack web developer, and overall cool guy.
+            Fullstack developer, and overall cool guy.
           </div>
           <div className="home__byline home__byline--location">
             Currently based in{" "}
