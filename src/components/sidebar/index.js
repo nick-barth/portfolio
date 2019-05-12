@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Reddit from "../../assets/svgs/reddit.svg"
 import Instagram from "../../assets/svgs/instagram.svg"
-import LinkedIn from "../../assets/svgs/linkedIn.svg"
+import LinkedIn from "../../assets/svgs/linkedin.svg"
 import Github from "../../assets/svgs/github.svg"
 
 export default () => {
