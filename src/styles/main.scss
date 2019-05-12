@@ -2,12 +2,13 @@
 
 //pages
 @import "home";
+@import "tech";
 
 //components
 @import "sidebar";
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Cinzel");
+@import url("https://fonts.googleapis.com/css?family=Halant");
 
 html,
 body,
@@ -115,4 +116,8 @@ q:after {
 blockquote,
 q {
   quotes: "" "";
+}
+
+html {
+  font-family: "Halant", serif;
 }

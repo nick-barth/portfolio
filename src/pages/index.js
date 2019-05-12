@@ -12,7 +12,7 @@ export default props => {
             className="home__background"
             fluid={props.data.splash.childImageSharp.fluid}
             style={{
-              position: "inherit",
+              position: "initial",
             }}
           />
           <div className="home__content">
@@ -21,7 +21,7 @@ export default props => {
               Welcome to the personal site of Nick Barth.
             </div>
             <div className="home__byline">
-              Fullstack web developer, designer, and overall cool guy.
+              Fullstack web developer, and overall cool guy.
             </div>
             <div className="home__byline home__byline--location">
               Currently based in{" "}

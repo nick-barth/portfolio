@@ -3,10 +3,8 @@ import Layout from "../components/layout"
 
 export default () => {
   return (
-    <div>
-      <Layout>
-        <div>Tech</div>
-      </Layout>
+    <div className="tech">
+      <Layout />
     </div>
   )
 }
