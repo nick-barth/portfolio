@@ -21,7 +21,7 @@ export default () => {
                 <Link
                   className="sidebar__nav-a"
                   activeClassName="sidebar__nav-a--active"
-                  to={`/${url}`}
+                  to={`/${url}/`}
                 >
                   {route}
                 </Link>
