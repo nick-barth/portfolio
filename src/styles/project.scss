@@ -1,0 +1,53 @@
+.project {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  max-width: 900px;
+  margin-bottom: 120px;
+}
+
+.project:hover .project__background {
+  background-color: $red;
+}
+
+.project__background {
+  position: absolute;
+  width: 80%;
+  height: 130%;
+  background-color: $gray-light;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+  z-index: 1;
+  transition: all 0.25s ease-in-out;
+  opacity: 0.5;
+}
+
+.project__info {
+  z-index: 2;
+}
+
+.project__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.project__location {
+  font-size: 16px;
+  font-weight: 100;
+  margin-bottom: 26px;
+  color: $text-gray-light;
+}
+
+.project__description {
+  font-size: 20px;
+  max-width: 250px;
+}
+
+.project__image {
+  width: 400px;
+  z-index: 2;
+}

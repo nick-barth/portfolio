@@ -1,7 +1,6 @@
 .work {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  width: calc(100% - 260px);
   background-color: $gray-dark;
 }
 
@@ -18,10 +17,14 @@
   letter-spacing: 4px;
 }
 
-.work__projects {
+.work__description {
   font-size: 16px;
   font-weight: 100;
   line-height: 28px;
   margin-bottom: 10px;
   max-width: 600px;
+}
+
+.work__projects {
+  padding: 40px;
 }
