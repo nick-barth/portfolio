@@ -17,18 +17,21 @@ export default props => {
       title: "Deedmob",
       description: "Empowering volunteers and volunteer organisations",
       location: "Amsterdam",
+      href: "https://www.deedmob.com/",
       img: props.data.deedmob.childImageSharp.fluid,
     },
     {
       title: "Code Kingdoms",
       description: "Teaching kids to code via minecraft",
       location: "London",
+      href: "https://codekingdoms.com/",
       img: props.data.codekingdoms.childImageSharp.fluid,
     },
     {
       title: "Nxchange",
       description: "A fully regulated stock exchange as a service",
       location: "Amsterdam",
+      href: "https://www.nxchange.com/",
       img: props.data.nxchange.childImageSharp.fluid,
     },
     {
@@ -36,12 +39,14 @@ export default props => {
       description:
         "A suite of eight websites for promoting video game infrastructure",
       location: "Earth",
+      href: "http://www.ssbu-counters.com/",
       img: props.data.ssbu.childImageSharp.fluid,
     },
     {
       title: "Poop Log",
       description: "errr... its a poop log",
       location: "Buffalo",
+      href: "http://nick-barth.com/pooplog/",
       img: props.data.pooplog.childImageSharp.fluid,
     },
   ]
