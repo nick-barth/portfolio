@@ -2,9 +2,9 @@ import React from "react"
 import Img from "gatsby-image"
 import Seperator from "../seperator"
 
-export default ({ title, description, img, location }) => {
+export default ({ title, description, img, location, href }) => {
   return (
-    <div className="project">
+    <a href={href} target="_blank" className="project">
       <div className="project__background" />
       <div className="project__info">
         <div className="project__title">{title}</div>
@@ -15,6 +15,6 @@ export default ({ title, description, img, location }) => {
       <div className="project__image">
         <Img fluid={img} />
       </div>
-    </div>
+    </a>
   )
 }
