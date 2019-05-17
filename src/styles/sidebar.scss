@@ -12,6 +12,9 @@
   background-color: $gray-light;
   color: $text-gray-light;
   padding: 40px;
+  @include phone {
+    display: none;
+  }
 }
 
 .sidebar__header {

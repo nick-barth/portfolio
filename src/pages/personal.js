@@ -46,6 +46,7 @@ export default props => {
             <li>Being well rounded</li>
             <li>
               <a
+                rel="noopener noreferrer"
                 target="_blank"
                 href="https://www.youtube.com/watch?v=npyJ0lECjv0"
               >

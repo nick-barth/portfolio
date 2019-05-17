@@ -2,6 +2,9 @@
   position: absolute;
   width: calc(100% - 260px);
   background-color: $gray-dark;
+  @include phone {
+    width: 100%;
+  }
 }
 
 .work__content {

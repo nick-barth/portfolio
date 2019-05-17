@@ -2,7 +2,12 @@ import React from "react"
 
 export default ({ title, description, img, language, href }) => {
   return (
-    <a href={href} target="_blank" className="technology">
+    <a
+      href={href}
+      rel="noopener noreferrer"
+      target="_blank"
+      className="technology"
+    >
       <div className="technology__image-container" />
       <div className="technology__info">
         <div className="technology__glance">

@@ -1,5 +1,8 @@
 @import "variables";
 
+//layout
+@import "layout";
+
 //pages
 @import "home";
 @import "tech";
@@ -8,6 +11,7 @@
 
 //components
 @import "sidebar";
+@import "mobilesidebar";
 @import "seperator";
 @import "project";
 @import "technology";

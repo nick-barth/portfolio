@@ -4,7 +4,12 @@ import Seperator from "../seperator"
 
 export default ({ title, description, img, location, href }) => {
   return (
-    <a href={href} target="_blank" className="project">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project"
+    >
       <div className="project__background" />
       <div className="project__info">
         <div className="project__title">{title}</div>
