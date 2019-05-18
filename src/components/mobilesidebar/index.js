@@ -6,19 +6,32 @@ export default class Mobilesidebar extends React.Component {
     isOpen: false,
   }
 
-  toggle = () => {
-    console.log("wow")
-  }
-
   render() {
     const { isOpen } = this.state
 
     return (
       <React.Fragment>
-        <div className="mobilesidebar__hamburger" onClick={this.toggle}>
-          fuck you
+        <div
+          className="mobilesidebar__hamburger"
+          onClick={() => this.setState({ isOpen: !isOpen })}
+        >
+          <div className="mobilesidebar__hamburger-icon">
+            <span
+              className={`mobilesidebar__hamburger-span ${isOpen &&
+                "mobilesidebar__hamburger-span--open"}`}
+              key={1}
+            />
+            <span
+              className={`mobilesidebar__hamburger-span ${isOpen &&
+                "mobilesidebar__hamburger-span--open"}`}
+              key={3}
+            />
+          </div>
         </div>
-        <div className={`mobilesidebar ${isOpen && "mobilesidebar--open"}`}>
+        <div
+          className={`mobilesidebar__content ${isOpen &&
+            "mobilesidebar__content--open"}`}
+        >
           <div className="mobilesidebar__header">
             <h1 className="mobilesidebar__header__name">Nick Barth</h1>
           </div>

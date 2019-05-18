@@ -6,12 +6,12 @@ import Transition from "../components/transition"
 
 export default ({ children, location }) => {
   return (
-    <React.Fragment>
+    <div className="layout">
       <Mobilesidebar />
       <Sidebar />
       <main className="layout__content">
         <Transition location={location}>{children}</Transition>
       </main>
-    </React.Fragment>
+    </div>
   )
 }
