@@ -29,6 +29,9 @@
   display: inline-flex;
   position: relative;
   text-decoration: line-through;
+  @include phone {
+    display: block;
+  }
 }
 
 .home__byline {
@@ -46,6 +49,9 @@
 .home__location {
   position: absolute;
   top: 24px;
+  @include phone {
+    position: relative;
+  }
 }
 .home__byline__city {
   text-decoration: line-through;
