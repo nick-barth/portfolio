@@ -10,7 +10,7 @@ export default class Mobilesidebar extends React.Component {
     const { isOpen } = this.state
 
     return (
-      <React.Fragment>
+      <div className="mobilesidebar">
         <div
           className="mobilesidebar__hamburger"
           onClick={() => this.setState({ isOpen: !isOpen })}
@@ -40,7 +40,11 @@ export default class Mobilesidebar extends React.Component {
               {["home", "work", "tech", "personal"].map(route => {
                 const url = route === "home" ? "" : route
                 return (
-                  <li className="mobilesidebar__nav-links" key={route}>
+                  <li
+                    className="mobilesidebar__nav-links"
+                    onClick={() => this.setState({ isOpen: false })}
+                    key={route}
+                  >
                     <Link
                       className="mobilesidebar__nav-a"
                       activeClassName="mobilesidebar__nav-a--active"
@@ -54,7 +58,7 @@ export default class Mobilesidebar extends React.Component {
             </ul>
           </div>
         </div>
-      </React.Fragment>
+      </div>
     )
   }
 }

@@ -1,3 +1,10 @@
+.mobilesidebar {
+  display: none;
+  @include phone {
+    display: block;
+  }
+}
+
 .mobilesidebar__hamburger {
   z-index: 4;
   position: fixed;
@@ -78,7 +85,7 @@
 .mobilesidebar__hamburger-span {
   display: block;
   width: 33px;
-  height: 3px;
+  height: 4px;
   margin-bottom: 5px;
   position: relative;
 

@@ -4,6 +4,7 @@
   background-color: $gray-dark;
   @include phone {
     width: 100%;
+    min-height: 100%;
   }
 }
 
