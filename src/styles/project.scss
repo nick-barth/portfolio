@@ -52,4 +52,7 @@
 .project__image {
   width: 400px;
   z-index: 2;
+  @include phone {
+    display: none;
+  }
 }

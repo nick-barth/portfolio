@@ -3,7 +3,10 @@
   text-decoration: none;
   color: $text-gray-dark;
   flex-direction: column;
-  margin-right: 10px;
+  width: 32%;
+  @include phone {
+    width: 100%;
+  }
 }
 
 .technology:hover .technology__background {

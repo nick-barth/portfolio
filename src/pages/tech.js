@@ -5,28 +5,119 @@ import Technology from "../components/technology"
 import Seperator from "../components/seperator"
 
 export default props => {
+  const fundamentals = [
+    {
+      title: "CSS",
+      description:
+        "The most important part of user interaction is here, and no where else.  I make users and designers happy.",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "HTML",
+      description:
+        "SEO, Accessability, and speed.  These are the bricks our houses are built with.",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "Javascript",
+      description:
+        "More important than gravity.  All functionality requires a mastered level of javascript and it's newest features",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+  ]
   const essentials = [
     {
       title: "React",
       description:
         "My bread and butter, I've been working with React for most of my proffessional career, and I'm a big fan.",
-      language: "Javascript",
+      language: "Javascript framework",
       href: "https://www.centralapp.com/en",
       img: props.data.centralApp.childImageSharp.fluid,
     },
     {
       title: "Node.js",
       description:
-        "My bread and butter, I've been working with React for most of my proffessional career, and I'm a big fan.",
+        "Comes with the territory, love it, hate it, but I won't debate it",
       language: "Javascript",
       href: "https://www.centralapp.com/en",
       img: props.data.centralApp.childImageSharp.fluid,
     },
     {
-      title: "React",
+      title: "Git",
+      description: "Of course, it's version control we all know and love.",
+      language: "Bash",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+  ]
+
+  const thefunstuff = [
+    {
+      title: "GraphQL",
+      description: "Eliminates the need for backend docs, why the heck not.",
+      language: "Query Language",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "Vue",
+      description: "I like trying new things, that's my vue.",
+      language: "Javascript framework",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "Handlebars",
+      description: "Make tons of websites with one website?  Yes, please.",
+      language: "Templating Engine",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "D3",
       description:
-        "My bread and butter, I've been working with React for most of my proffessional career, and I'm a big fan.",
-      language: "Javascript",
+        "In traditional advertising sex sells.  Online?  Interactive data visualizations sells.",
+      language: "Javascript library",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "Gatsby",
+      description:
+        "I value speed, so does Gatsby.  However, I'm not going run into Myrtle or hit Daisy",
+      language: "Static Site Generator",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "MongoDB",
+      description: "While mongo has no relationships, I have one with Mongo.",
+      language: "Database",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "Postgres",
+      description: "It's an open relationship, and Postgres is the sequel.",
+      language: "Database",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "Netlify",
+      description: "Yeah, but only as long as it's free!",
+      language: "Dev Ops",
+      href: "https://www.centralapp.com/en",
+      img: props.data.centralApp.childImageSharp.fluid,
+    },
+    {
+      title: "Adobe CS",
+      description:
+        "Designers often send over assets that don't appreciate the consistentency that our developers have honed.  So I have to get my hands dirty. ",
+      language: "Design",
       href: "https://www.centralapp.com/en",
       img: props.data.centralApp.childImageSharp.fluid,
     },
@@ -43,7 +134,7 @@ export default props => {
         </div>
         <div className="tech__techs-category">Fundamentals</div>
         <div className="tech__techs tech__techs--essentials">
-          {essentials.map(tech => (
+          {fundamentals.map(tech => (
             <Technology key={tech.title} {...tech} />
           ))}
         </div>
@@ -54,8 +145,8 @@ export default props => {
           ))}
         </div>
         <div className="tech__techs-category">The Fun Stuff</div>
-        <div className="tech__techs tech__techs--essentials">
-          {essentials.map(tech => (
+        <div className="tech__techs tech__techs--funstuff">
+          {thefunstuff.map(tech => (
             <Technology key={tech.title} {...tech} />
           ))}
         </div>
