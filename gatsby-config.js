@@ -27,6 +27,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    "gatsby-plugin-layout",
+    `gatsby-plugin-layout`,
+    `gatsby-plugin-react-helmet`,
   ],
 }
