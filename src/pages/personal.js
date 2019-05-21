@@ -13,32 +13,43 @@ export default props => {
           and capital generation. Here is a brief overview.
         </div>
         <div className="personal__container">
-          <div className="personal__category">Hobbies</div>
+          <h3 className="personal__category">Hobbies</h3>
           <ul className="personal__personal">
             <li>
-              <a href="https://cmoreira.net/visited-countries-map/?map=5cde8fc2e1370">
+              <a
+                target="_blank"
+                href="https://cmoreira.net/visited-countries-map/?map=5cde8fc2e1370"
+              >
                 Travel
               </a>
             </li>
             <li>Squash</li>
             <li>
-              <a href="https://www.goodreads.com/user/show/60480445-nick-barth">
+              <a
+                target="_blank"
+                href="https://www.goodreads.com/user/show/60480445-nick-barth"
+              >
                 Reading
               </a>
             </li>
             <li>Gym</li>
             <li>Cooking</li>
             <li>
-              <a href="https://www.hackyourfuture.net/">Volunteering</a>
+              <a target="_blank" href="https://www.hackyourfuture.net/">
+                Volunteering
+              </a>
             </li>
           </ul>
         </div>
         <div className="personal__container">
-          <div className="personal__category">Passions</div>
+          <h3 className="personal__category">Passions</h3>
           <ul className="personal__personal">
             <li>People</li>
             <li>
-              <a href="https://open.spotify.com/user/1215590034?si=NX0c4GtASiGR5SecTg1LTQ">
+              <a
+                target="_blank"
+                href="https://open.spotify.com/user/1215590034?si=NX0c4GtASiGR5SecTg1LTQ"
+              >
                 Music
               </a>
             </li>
@@ -56,12 +67,14 @@ export default props => {
           </ul>
         </div>
         <div className="personal__container">
-          <div className="personal__category">Things I like</div>
+          <h3 className="personal__category">Things I like</h3>
           <ul className="personal__personal">
             <li>Laughing</li>
             <li>Public Transport</li>
             <li>
-              <a href="https://www.reddit.com/user/nickinkorea">Reddit</a>
+              <a target="_blank" href="https://www.reddit.com/user/nickinkorea">
+                Reddit
+              </a>
             </li>
             <li>Working in cafes</li>
             <li>Sunshine</li>
@@ -70,7 +83,7 @@ export default props => {
           </ul>
         </div>
         <div className="personal__container">
-          <div className="personal__category">Things I dislike</div>
+          <h3 className="personal__category">Things I dislike</h3>
           <ul className="personal__personal">
             <li>Dependencies</li>
             <li>Injustice</li>

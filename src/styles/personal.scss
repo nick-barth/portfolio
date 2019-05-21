@@ -2,8 +2,10 @@
   position: absolute;
   width: calc(100% - 260px);
   background-color: $gray-dark;
+  height: 100%;
   @include phone {
     width: 100%;
+    height: auto;
   }
 }
 
@@ -27,4 +29,21 @@
   margin-bottom: 10px;
   max-width: 600px;
   margin-bottom: 20px;
+}
+
+.personal__category {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 20px 0;
+  letter-spacing: 4px;
+}
+
+.personal__personal li {
+  margin-bottom: 5px;
+}
+
+.personal__personal li a {
+  text-decoration: none;
+  color: $text-gray-light;
+  text-decoration: underline;
 }
