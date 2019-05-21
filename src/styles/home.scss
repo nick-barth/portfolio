@@ -52,6 +52,7 @@
   position: absolute;
   top: 24px;
   @include phone {
+    top: 0;
     position: relative;
   }
 }
