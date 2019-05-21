@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 
 export default ({ title, description, img, language, href }) => {
   return (
@@ -8,7 +9,9 @@ export default ({ title, description, img, language, href }) => {
       target="_blank"
       className="technology"
     >
-      <div className="technology__image-container" />
+      <div className="technology__image-container">
+        <Img className="technology__image-img" fixed={img} />
+      </div>
       <div className="technology__info">
         <div className="technology__glance">
           <div className="technology__title">{title}</div>

@@ -5,27 +5,28 @@ import Technology from "../components/technology"
 import Seperator from "../components/seperator"
 
 export default props => {
+  console.log(props)
   const fundamentals = [
     {
       title: "CSS",
       description:
         "The most important part of user interaction is here, and no where else.  I make users and designers happy.",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.css.childImageSharp.fixed,
     },
     {
       title: "HTML",
       description:
         "SEO, Accessability, and speed.  These are the bricks our houses are built with.",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.html.childImageSharp.fixed,
     },
     {
       title: "Javascript",
       description:
         "More important than gravity.  All functionality requires a mastered level of javascript and it's newest features",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.js.childImageSharp.fixed,
     },
   ]
   const essentials = [
@@ -35,7 +36,7 @@ export default props => {
         "My bread and butter, I've been working with React for most of my proffessional career, and I'm a big fan.",
       language: "Javascript framework",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.react.childImageSharp.fixed,
     },
     {
       title: "Node.js",
@@ -43,14 +44,14 @@ export default props => {
         "Comes with the territory, love it, hate it, but I won't debate it",
       language: "Javascript",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.node.childImageSharp.fixed,
     },
     {
       title: "Git",
       description: "Of course, it's version control we all know and love.",
       language: "Bash",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.git.childImageSharp.fixed,
     },
   ]
 
@@ -60,21 +61,21 @@ export default props => {
       description: "Eliminates the need for backend docs, why the heck not.",
       language: "Query Language",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.graphql.childImageSharp.fixed,
     },
     {
       title: "Vue",
       description: "I like trying new things, that's my vue.",
       language: "Javascript framework",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.vue.childImageSharp.fixed,
     },
     {
       title: "Handlebars",
       description: "Make tons of websites with one website?  Yes, please.",
       language: "Templating Engine",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.handlebars.childImageSharp.fixed,
     },
     {
       title: "D3",
@@ -82,7 +83,7 @@ export default props => {
         "In traditional advertising sex sells.  Online?  Interactive data visualizations sells.",
       language: "Javascript library",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.d3.childImageSharp.fixed,
     },
     {
       title: "Gatsby",
@@ -90,36 +91,36 @@ export default props => {
         "I value speed, so does Gatsby.  However, I'm not going run into Myrtle or hit Daisy",
       language: "Static Site Generator",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.gatsby.childImageSharp.fixed,
     },
     {
       title: "MongoDB",
-      description: "While mongo has no relationships, I have one with Mongo.",
+      description:
+        "They say mongo has no relationships, I have a relationship with Mongo.",
       language: "Database",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.mongo.childImageSharp.fixed,
     },
     {
       title: "Postgres",
       description: "It's an open relationship, and Postgres is the sequel.",
       language: "Database",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.postgres.childImageSharp.fixed,
     },
     {
       title: "Netlify",
       description: "Yeah, but only as long as it's free!",
       language: "Dev Ops",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.netlify.childImageSharp.fixed,
     },
     {
       title: "Adobe CS",
-      description:
-        "Designers often send over assets that don't appreciate the consistentency that our developers have honed.  So I have to get my hands dirty. ",
+      description: "I call this one, getting my hands dirty.",
       language: "Design",
       href: "https://www.centralapp.com/en",
-      img: props.data.centralApp.childImageSharp.fluid,
+      img: props.data.adobe.childImageSharp.fixed,
     },
   ]
 
@@ -157,45 +158,108 @@ export default props => {
 
 export const query = graphql`
   query {
-    centralApp: file(relativePath: { eq: "centralapp.png" }) {
+    graphql: file(relativePath: { eq: "techs/graphql.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
-    deedmob: file(relativePath: { eq: "deedmob.png" }) {
+    vue: file(relativePath: { eq: "techs/vue.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
-    nxchange: file(relativePath: { eq: "nxchange.png" }) {
+    react: file(relativePath: { eq: "techs/react.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
-    pooplog: file(relativePath: { eq: "pooplog.png" }) {
+    html: file(relativePath: { eq: "techs/html.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
-    codekingdoms: file(relativePath: { eq: "codekingdoms.png" }) {
+    css: file(relativePath: { eq: "techs/css.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
-    ssbu: file(relativePath: { eq: "ssbu.png" }) {
+    js: file(relativePath: { eq: "techs/js.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    d3: file(relativePath: { eq: "techs/d3.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    netlify: file(relativePath: { eq: "techs/netlify.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    handlebars: file(relativePath: { eq: "techs/handlebars.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    adobe: file(relativePath: { eq: "techs/adobe.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    git: file(relativePath: { eq: "techs/git.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    mongo: file(relativePath: { eq: "techs/mongo.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    gatsby: file(relativePath: { eq: "techs/gatsby.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    postgres: file(relativePath: { eq: "techs/postgres.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    node: file(relativePath: { eq: "techs/node.png" }) {
+      childImageSharp {
+        fixed(width: 140, height: 140) {
+          ...GatsbyImageSharpFixed
         }
       }
     }

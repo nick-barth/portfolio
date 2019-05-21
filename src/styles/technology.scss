@@ -36,8 +36,9 @@
 }
 
 .technology__description {
-  font-size: 16px;
+  font-size: 14px;
   max-width: 250px;
+  line-height: 24px;
 }
 
 .technology__image {
@@ -46,6 +47,14 @@
 
 .technology__image-container {
   background-color: $gray-light;
-  height: 120px;
-  width: 100%;
+  text-align: center;
+}
+
+.technology__image-img {
+  filter: grayscale(0.9);
+  transition: all 0.5s ease-in-out;
+}
+
+.technology:hover .technology__image-img {
+  filter: grayscale(0);
 }
