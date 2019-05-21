@@ -70,6 +70,13 @@
 
   @include phone {
     flex-direction: column;
+    border-top: none;
+    &:after {
+      display: none;
+    }
+    &:before {
+      display: none;
+    }
   }
 }
 
