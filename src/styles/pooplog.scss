@@ -1,0 +1,92 @@
+.pooplog {
+  position: absolute;
+  width: calc(100% - 260px);
+  color: #593001;
+  background-color: #fefec8;
+  min-height: 100%;
+  @include phone {
+    width: 100%;
+    min-height: 100%;
+  }
+}
+
+.pooplog__content {
+  padding: 40px;
+  position: relative;
+}
+
+.pooplog__header {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+
+.pooplog__description {
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 10px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.pooplog__numbers-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.pooplog__numbers {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.pooplog__number {
+  font-size: 58px;
+}
+
+.pooplog__subheader {
+  font-size: 32px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.pooplog__number-text {
+  font-weight: 200;
+}
+
+.pooplog__text {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.pooplog__charts {
+  display: flex;
+  @include phone {
+    flex-direction: column;
+  }
+}
+
+.pooplog__chart-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.pooplog__chartwrapper {
+  width: 50%;
+  @include phone {
+    width: 100%;
+  }
+}
+
+.pooplog__chartwrapper--single {
+  width: 100%;
+}
+
+.pooplog__chartwrapper--map {
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}

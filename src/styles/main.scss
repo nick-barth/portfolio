@@ -8,6 +8,7 @@
 @import "tech";
 @import "work";
 @import "personal";
+@import "pooplog";
 
 //components
 @import "sidebar";
@@ -15,6 +16,9 @@
 @import "seperator";
 @import "project";
 @import "technology";
+
+// Charts
+@import "~react-vis/dist/style";
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
