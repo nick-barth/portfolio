@@ -9,6 +9,7 @@ import {
   makeWidthFlexible,
   LineMarkSeries,
 } from "react-vis"
+import Img from "gatsby-image"
 
 import MapContainer from "../components/map"
 
@@ -107,234 +108,266 @@ export default props => {
   ]
 
   return (
-    <div className="pooplog">
-      <div className="pooplog__content">
-        <h1 className="pooplog__header">Pooplog</h1>
-        <div className="pooplog__description">
-          A deep dive into a year on the toilet
+    <React.Fragment>
+      {daySloshers.map(p => {
+        return (
+          <Img
+            className="poop"
+            key={p.x}
+            style={{ position: "fixed" }}
+            fluid={props.data.poop.childImageSharp.fluid}
+          />
+        )
+      })}
+      <div className="pooplog">
+        <div className="pooplog__content">
+          <h1 className="pooplog__header">Pooplog</h1>
+          <div className="pooplog__description">
+            A deep dive into a year on the toilet
+          </div>
+          <div className="pooplog__numbers-container">
+            <div className="pooplog__numbers">
+              <div className="pooplog__number">515</div>
+              <div className="pooplog__number-text">Total Poops</div>
+            </div>
+            <div className="pooplog__numbers">
+              <div className="pooplog__number">1.41</div>
+              <div className="pooplog__number-text">Poops per day </div>
+            </div>
+            <div className="pooplog__numbers">
+              <div className="pooplog__number">40</div>
+              <div className="pooplog__number-text">Unique Toilets</div>
+            </div>
+            <div className="pooplog__numbers">
+              <div className="pooplog__number">3.89</div>
+              <div className="pooplog__number-text">Average Consistancy</div>
+            </div>
+          </div>
+          <h2 className="pooplog__subheader">Methodology</h2>
+          <div className="pooplog__text">
+            Over the course of a year, from 1/20/15 to 1/20/16, every instance
+            of defecation was recorded in a spreadsheet. I defined defecation: a
+            sit, a loaf, a wipe, and a flush. Courtesy flushes, half an hour
+            slugfests, and multiple wipe and poo sessions did not increase the
+            tally more than once. I recorded four statistics regarding each
+            poop: date, time, location, and consistency. Consistency was
+            measured via eyeball, in reference to the{" "}
+            <a href="https://en.wikipedia.org/wiki/Bristol_stool_scale">
+              Bristol Stool Scale
+            </a>
+            . Raw data can be found{" "}
+            <a href="https://docs.google.com/spreadsheets/d/13KKdGDYjxb085kSAB_LGJ7zIiQdtTBZD37K4uf4JH9g/edit?usp=sharing">
+              here
+            </a>
+            . Without further ado, let's get into this mess, my own tales of
+            umber.
+          </div>
+          <section>
+            <h2 className="pooplog__subheader">I. Volume</h2>
+            <div className="pooplog__charts">
+              <div className="pooplog__chartwrapper">
+                <h3 className="pooplog__chart-title">I.a Poops per day</h3>
+                <FlexibleXYPlot xType="ordinal" height={300}>
+                  <VerticalGridLines />
+                  <HorizontalGridLines />
+                  <XAxis />
+                  <YAxis />
+                  <VerticalBarSeries data={volumeBarData} color={poopycolor} />
+                </FlexibleXYPlot>
+              </div>
+              <div className="pooplog__chartwrapper">
+                <h3 className="pooplog__chart-title">I.b Location</h3>
+                <FlexibleXYPlot xType="ordinal" height={300}>
+                  <VerticalGridLines />
+                  <HorizontalGridLines />
+                  <XAxis />
+                  <YAxis />
+                  <VerticalBarSeries
+                    data={locationBarData}
+                    color={poopycolor}
+                  />
+                </FlexibleXYPlot>
+              </div>
+            </div>
+            <div className="pooplog__text">
+              I.a - Predictably, my most frequent poop locations occurred at
+              work, with a secondary location of my home. Assuming each poop
+              averaged about 5 minutes, at NYS minimum wage (8.75), pooping on
+              the company dime will have made me around $185.20 this year. To
+              see the top 5 non-home and non-work locations, please click on the
+              "Other" slice of the pie graph.
+              <br />
+              <br />
+              I.b - Shows the number of n-poop days I had this year. With an
+              average of 1.4, it's not surprising that most frequently 1 poop
+              days occurred, followed by 2 poop days. Strangely enough I did go
+              through multiple days, 24 to be exact, with 0 poops. The smallest
+              slice of our graph here are days I remember most fondly, 4 poop
+              days, these miasma filled days were usually caused by a
+              combination of binge drinking, sickness, or an unrepentant love
+              for curry.
+            </div>
+          </section>
+          <section>
+            <h2 className="pooplog__subheader">II. Time</h2>
+            <div className="pooplog__charts">
+              <div className="pooplog__chartwrapper">
+                <h3 className="pooplog__chart-title">
+                  II.a Poop Volume by Day
+                </h3>
+                <FlexibleXYPlot
+                  margin={{ bottom: 50 }}
+                  xType="ordinal"
+                  height={300}
+                >
+                  <VerticalGridLines />
+                  <HorizontalGridLines />
+                  <XAxis tickLabelAngle={-90} />
+                  <YAxis />
+                  <VerticalBarSeries data={dayPoopers} color={poopycolor} />
+                </FlexibleXYPlot>
+              </div>
+              <div className="pooplog__chartwrapper">
+                <h3 className="pooplog__chart-title">
+                  II.b Poop Consistancy by Day
+                </h3>
+                <FlexibleXYPlot
+                  margin={{ bottom: 50 }}
+                  xType="ordinal"
+                  height={300}
+                >
+                  <VerticalGridLines />
+                  <HorizontalGridLines />
+                  <XAxis tickLabelAngle={-90} />
+                  <YAxis />
+                  <LineMarkSeries data={daySloshers} color={poopycolor} />
+                </FlexibleXYPlot>
+              </div>
+            </div>
+            <div className="pooplog__charts">
+              <div className="pooplog__chartwrapper">
+                <h3 className="pooplog__chart-title">
+                  II.c Poop Volume by Month
+                </h3>
+                <FlexibleXYPlot
+                  margin={{ bottom: 50 }}
+                  xType="ordinal"
+                  height={300}
+                >
+                  <VerticalGridLines />
+                  <HorizontalGridLines />
+                  <XAxis tickLabelAngle={-90} />
+                  <YAxis />
+                  <VerticalBarSeries data={monthPoopers} color={poopycolor} />
+                </FlexibleXYPlot>
+              </div>
+              <div className="pooplog__chartwrapper">
+                <h3 className="pooplog__chart-title">
+                  II.d Poop Consistancy by Month
+                </h3>
+                <FlexibleXYPlot
+                  margin={{ bottom: 50 }}
+                  xType="ordinal"
+                  height={300}
+                >
+                  <VerticalGridLines />
+                  <HorizontalGridLines />
+                  <XAxis tickLabelAngle={-90} />
+                  <YAxis />
+                  <LineMarkSeries data={monthSloshers} color={poopycolor} />
+                </FlexibleXYPlot>
+              </div>
+            </div>
+            <div className="pooplog__text">
+              II.a & II.b - Here we really start to see a trend forming. A
+              skyrocket in the looseness of my stool on Sunday correlates to my
+              habit of having more than a few drinks on Saturday nights. Poops
+              are fairly consistent during the week, most likely due to
+              predictable coffee consumption. We also notice a slight swoon
+              during Friday and the weekend, when I generally have better things
+              to do than poop!
+              <br />
+              <br />
+              II.c & II.d - I averaged 42 poops per month, with a high of 53
+              (January) and a low of 35 (August). The inconsistencies, taking
+              into account the differences of days in a month, I found expected.
+              The average consistency also varied wildly, with a high of 4.4
+              (October was a sloppy month), and a low of 3.5 in May. The only
+              trend that seemed to hold true was a higher volume of poops during
+              colder months. I attribute this to more leafy greens and fresh
+              fruit consumed during summer, and more hearty meals and more
+              indoor time during the winter.
+            </div>
+          </section>
+          <section>
+            <h2 className="pooplog__subheader">III. Habits</h2>
+            <div className="pooplog__charts">
+              <div className="pooplog__chartwrapper pooplog__chartwrapper--single">
+                <h3 className="pooplog__chart-title">III.a Poops by hour</h3>
+                <FlexibleXYPlot
+                  xType="ordinal"
+                  margin={{ bottom: 50 }}
+                  height={300}
+                >
+                  <VerticalGridLines />
+                  <HorizontalGridLines />
+                  <XAxis tickLabelAngle={-90} />
+                  <YAxis />
+                  <VerticalBarSeries data={timePoops} color={poopycolor} />
+                </FlexibleXYPlot>
+              </div>
+            </div>
+            <div className="pooplog__text">
+              III.a - Predictably, my most frequent poops came during daylight
+              hours, with the hour of 10-11 dominating my fecal frequency with
+              93 poops. We've separated the weekday and weekend poops to
+              highlight the difference stability makes, specifically routine
+              coffee drinking at around 10 o'clock. More surprising was the
+              uptick of poops after 19:00, especially after hitting the near low
+              of six 18:00 poops, of which, four came on the weekend. One could
+              infer that this was my cooking and eating time, after returning
+              home from work.
+              <br />
+            </div>
+          </section>
+          <section>
+            <h2 className="pooplog__subheader">IV. Locations</h2>
+            <div className="pooplog__charts">
+              <div className="pooplog__chartwrapper pooplog__chartwrapper--single pooplog__chartwrapper--map">
+                <h3 className="pooplog__chart-title">IV.a Map of Locations</h3>
+                <MapContainer />
+              </div>
+            </div>
+            <div className="pooplog__text">
+              IV.a - I mapped a majority of the 40 different toilets that were
+              blessed with my precious cheeks this year. Poop location of the
+              year goes to the Museum of Modern Art in New York, which had
+              exquisite granite flooring, perfect stall height, and a very
+              generous bowl and seat. Worst poop location of the year goes to
+              Milkies Elmwood Lounge. To be fair, I never learned my lesson, and
+              ended up there 3 times. At least I could hear the open mic comedy
+              set from my ivory throne.
+              <br />
+            </div>
+          </section>
+          <section>
+            <h2 className="pooplog__subheader">V. Conclusion</h2>
+            <div className="pooplog__text">Poop is funny. I'm an idiot.</div>
+          </section>
         </div>
-        <div className="pooplog__numbers-container">
-          <div className="pooplog__numbers">
-            <div className="pooplog__number">515</div>
-            <div className="pooplog__number-text">Total Poops</div>
-          </div>
-          <div className="pooplog__numbers">
-            <div className="pooplog__number">1.41</div>
-            <div className="pooplog__number-text">Poops per day </div>
-          </div>
-          <div className="pooplog__numbers">
-            <div className="pooplog__number">40</div>
-            <div className="pooplog__number-text">Unique Toilets</div>
-          </div>
-          <div className="pooplog__numbers">
-            <div className="pooplog__number">3.89</div>
-            <div className="pooplog__number-text">Average Consistancy</div>
-          </div>
-        </div>
-        <h2 className="pooplog__subheader">Methodology</h2>
-        <div className="pooplog__text">
-          Over the course of a year, from 1/20/15 to 1/20/16, every instance of
-          defecation was recorded in a spreadsheet. I defined defecation: a sit,
-          a loaf, a wipe, and a flush. Courtesy flushes, half an hour slugfests,
-          and multiple wipe and poo sessions did not increase the tally more
-          than once. I recorded four statistics regarding each poop: date, time,
-          location, and consistency. Consistency was measured via eyeball, in
-          reference to the{" "}
-          <a href="https://en.wikipedia.org/wiki/Bristol_stool_scale">
-            Bristol Stool Scale
-          </a>
-          . Raw data can be found{" "}
-          <a href="https://docs.google.com/spreadsheets/d/13KKdGDYjxb085kSAB_LGJ7zIiQdtTBZD37K4uf4JH9g/edit?usp=sharing">
-            here
-          </a>
-          . Without further ado, let's get into this mess, my own tales of
-          umber.
-        </div>
-        <section>
-          <h2 className="pooplog__subheader">I. Volume</h2>
-          <div className="pooplog__charts">
-            <div className="pooplog__chartwrapper">
-              <h3 className="pooplog__chart-title">I.a Poops per day</h3>
-              <FlexibleXYPlot xType="ordinal" height={300}>
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis />
-                <YAxis />
-                <VerticalBarSeries data={volumeBarData} color={poopycolor} />
-              </FlexibleXYPlot>
-            </div>
-            <div className="pooplog__chartwrapper">
-              <h3 className="pooplog__chart-title">I.b Location</h3>
-              <FlexibleXYPlot xType="ordinal" height={300}>
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis />
-                <YAxis />
-                <VerticalBarSeries data={locationBarData} color={poopycolor} />
-              </FlexibleXYPlot>
-            </div>
-          </div>
-          <div className="pooplog__text">
-            I.a - Predictably, my most frequent poop locations occurred at work,
-            with a secondary location of my home. Assuming each poop averaged
-            about 5 minutes, at NYS minimum wage (8.75), pooping on the company
-            dime will have made me around $185.20 this year. To see the top 5
-            non-home and non-work locations, please click on the "Other" slice
-            of the pie graph.
-            <br />
-            <br />
-            I.b - Shows the number of n-poop days I had this year. With an
-            average of 1.4, it's not surprising that most frequently 1 poop days
-            occurred, followed by 2 poop days. Strangely enough I did go through
-            multiple days, 24 to be exact, with 0 poops. The smallest slice of
-            our graph here are days I remember most fondly, 4 poop days, these
-            miasma filled days were usually caused by a combination of binge
-            drinking, sickness, or an unrepentant love for curry.
-          </div>
-        </section>
-        <section>
-          <h2 className="pooplog__subheader">II. Time</h2>
-          <div className="pooplog__charts">
-            <div className="pooplog__chartwrapper">
-              <h3 className="pooplog__chart-title">II.a Poop Volume by Day</h3>
-              <FlexibleXYPlot
-                margin={{ bottom: 50 }}
-                xType="ordinal"
-                height={300}
-              >
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis tickLabelAngle={-90} />
-                <YAxis />
-                <VerticalBarSeries data={dayPoopers} color={poopycolor} />
-              </FlexibleXYPlot>
-            </div>
-            <div className="pooplog__chartwrapper">
-              <h3 className="pooplog__chart-title">
-                II.b Poop Consistancy by Day
-              </h3>
-              <FlexibleXYPlot
-                margin={{ bottom: 50 }}
-                xType="ordinal"
-                height={300}
-              >
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis tickLabelAngle={-90} />
-                <YAxis />
-                <LineMarkSeries data={daySloshers} color={poopycolor} />
-              </FlexibleXYPlot>
-            </div>
-          </div>
-          <div className="pooplog__charts">
-            <div className="pooplog__chartwrapper">
-              <h3 className="pooplog__chart-title">
-                II.c Poop Volume by Month
-              </h3>
-              <FlexibleXYPlot
-                margin={{ bottom: 50 }}
-                xType="ordinal"
-                height={300}
-              >
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis tickLabelAngle={-90} />
-                <YAxis />
-                <VerticalBarSeries data={monthPoopers} color={poopycolor} />
-              </FlexibleXYPlot>
-            </div>
-            <div className="pooplog__chartwrapper">
-              <h3 className="pooplog__chart-title">
-                II.d Poop Consistancy by Month
-              </h3>
-              <FlexibleXYPlot
-                margin={{ bottom: 50 }}
-                xType="ordinal"
-                height={300}
-              >
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis tickLabelAngle={-90} />
-                <YAxis />
-                <LineMarkSeries data={monthSloshers} color={poopycolor} />
-              </FlexibleXYPlot>
-            </div>
-          </div>
-          <div className="pooplog__text">
-            II.a & II.b - Here we really start to see a trend forming. A
-            skyrocket in the looseness of my stool on Sunday correlates to my
-            habit of having more than a few drinks on Saturday nights. Poops are
-            fairly consistent during the week, most likely due to predictable
-            coffee consumption. We also notice a slight swoon during Friday and
-            the weekend, when I generally have better things to do than poop!
-            <br />
-            <br />
-            II.c & II.d - I averaged 42 poops per month, with a high of 53
-            (January) and a low of 35 (August). The inconsistencies, taking into
-            account the differences of days in a month, I found expected. The
-            average consistency also varied wildly, with a high of 4.4 (October
-            was a sloppy month), and a low of 3.5 in May. The only trend that
-            seemed to hold true was a higher volume of poops during colder
-            months. I attribute this to more leafy greens and fresh fruit
-            consumed during summer, and more hearty meals and more indoor time
-            during the winter.
-          </div>
-        </section>
-        <section>
-          <h2 className="pooplog__subheader">III. Habits</h2>
-          <div className="pooplog__charts">
-            <div className="pooplog__chartwrapper pooplog__chartwrapper--single">
-              <h3 className="pooplog__chart-title">III.a Poops by hour</h3>
-              <FlexibleXYPlot
-                xType="ordinal"
-                margin={{ bottom: 50 }}
-                height={300}
-              >
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis tickLabelAngle={-90} />
-                <YAxis />
-                <VerticalBarSeries data={timePoops} color={poopycolor} />
-              </FlexibleXYPlot>
-            </div>
-          </div>
-          <div className="pooplog__text">
-            III.a - Predictably, my most frequent poops came during daylight
-            hours, with the hour of 10-11 dominating my fecal frequency with 93
-            poops. We've separated the weekday and weekend poops to highlight
-            the difference stability makes, specifically routine coffee drinking
-            at around 10 o'clock. More surprising was the uptick of poops after
-            19:00, especially after hitting the near low of six 18:00 poops, of
-            which, four came on the weekend. One could infer that this was my
-            cooking and eating time, after returning home from work.
-            <br />
-          </div>
-        </section>
-        <section>
-          <h2 className="pooplog__subheader">IV. Locations</h2>
-          <div className="pooplog__charts">
-            <div className="pooplog__chartwrapper pooplog__chartwrapper--single pooplog__chartwrapper--map">
-              <h3 className="pooplog__chart-title">IV.a Map of Locations</h3>
-              <MapContainer />
-            </div>
-          </div>
-          <div className="pooplog__text">
-            IV.a - I mapped a majority of the 40 different toilets that were
-            blessed with my precious cheeks this year. Poop location of the year
-            goes to the Museum of Modern Art in New York, which had exquisite
-            granite flooring, perfect stall height, and a very generous bowl and
-            seat. Worst poop location of the year goes to Milkies Elmwood
-            Lounge. To be fair, I never learned my lesson, and ended up there 3
-            times. At least I could hear the open mic comedy set from my ivory
-            throne.
-            <br />
-          </div>
-        </section>
-        <section>
-          <h2 className="pooplog__subheader">V. Conclusion</h2>
-          <div className="pooplog__text">Poop is funny. I'm an idiot.</div>
-        </section>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
+
+export const query = graphql`
+  query {
+    poop: file(relativePath: { eq: "sadpoop.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 16) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
