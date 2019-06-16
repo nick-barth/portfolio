@@ -5,7 +5,6 @@ import Technology from "../components/technology"
 import Seperator from "../components/seperator"
 
 export default props => {
-  console.log(props)
   const fundamentals = [
     {
       title: "CSS",
