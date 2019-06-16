@@ -33,7 +33,7 @@ export default props => {
     {
       title: "React",
       description:
-        "My bread and butter, I've been working with React for most of my proffessional career, and I'm a big fan.",
+        "My bread and butter, I've been working with React for most of my professional career, and I'm a big fan.",
       language: "Javascript framework",
       href: "https://www.centralapp.com/en",
       img: props.data.react.childImageSharp.fixed,
