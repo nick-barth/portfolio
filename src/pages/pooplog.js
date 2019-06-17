@@ -251,10 +251,9 @@ export default props => {
               average of 1.4, it's not surprising that most frequently 1 poop
               days occurred, followed by 2 poop days. Strangely enough I did go
               through multiple days, 24 to be exact, with 0 poops. The smallest
-              slice of our graph here are days I remember most fondly, 4 poop
-              days, these miasma filled days were usually caused by a
-              combination of binge drinking, sickness, or an unrepentant love
-              for curry.
+              slice of our graph are days I remember most fondly, 4 poop days,
+              these miasma filled days were usually caused by a combination of
+              binge drinking, sickness, or an unrepentant love for curry.
             </div>
           </section>
           <section>
