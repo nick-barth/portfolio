@@ -8,6 +8,14 @@
     width: 100%;
     min-height: 100%;
   }
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .pooplog__content {
@@ -145,14 +153,22 @@
   animation-delay: 2.4s, 2s;
 }
 .poop:nth-of-type(5) {
-  left: 40%;
+  left: 90%;
   animation-delay: 8s, 2s;
 }
 .poop:nth-of-type(6) {
-  left: 40%;
-  animation-delay: 2s, 2s;
+  left: 50%;
+  animation-delay: 5s, 2s;
 }
 .poop:nth-of-type(7) {
-  left: 40%;
-  animation-delay: 2s, 2s;
+  left: 20%;
+  animation-delay: 2s, 5s;
+}
+
+.tooltip {
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
+  text-align: center;
+  color: #593001;
 }

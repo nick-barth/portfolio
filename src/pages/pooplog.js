@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   XYPlot,
   XAxis,
@@ -8,14 +8,78 @@ import {
   VerticalBarSeries,
   makeWidthFlexible,
   LineMarkSeries,
+  GradientDefs,
+  Hint,
 } from "react-vis"
 import Img from "gatsby-image"
 
 import MapContainer from "../components/map"
 
+const FlexibleXYPlot = makeWidthFlexible(XYPlot)
+const poopycolor = "url(#myGradient)"
+const gradient = (
+  <GradientDefs>
+    <linearGradient id="myGradient" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stopColor="#6F6C0A" />
+      <stop offset="100%" stopColor="#7B5804" />
+    </linearGradient>
+  </GradientDefs>
+)
+
+const BarGraphComponent = ({ data }) => {
+  const [hoveredNode, setHoveredNode] = useState(false)
+  return (
+    <FlexibleXYPlot xType="ordinal" margin={{ bottom: 50 }} height={300}>
+      {hoveredNode ? (
+        <Hint value={hoveredNode}>
+          <div className="tooltip">
+            <p>{hoveredNode.x}</p>
+            <p>{hoveredNode.y}</p>
+          </div>
+        </Hint>
+      ) : null}
+      {gradient}
+      <VerticalGridLines />
+      <HorizontalGridLines />
+      <XAxis />
+      <YAxis />
+      <VerticalBarSeries
+        onValueMouseOver={v => setHoveredNode(v)}
+        onValueMouseOut={v => setHoveredNode(false)}
+        data={data}
+        color={"url(#myGradient)"}
+      />
+    </FlexibleXYPlot>
+  )
+}
+
+const LineGraphComponent = ({ data }) => {
+  const [hoveredNode, setHoveredNode] = useState(false)
+  return (
+    <FlexibleXYPlot margin={{ bottom: 50 }} xType="ordinal" height={300}>
+      {hoveredNode ? (
+        <Hint value={hoveredNode}>
+          <div className="tooltip">
+            <p>{hoveredNode.x}</p>
+            <p>{hoveredNode.y}</p>
+          </div>
+        </Hint>
+      ) : null}
+      <VerticalGridLines />
+      <HorizontalGridLines />
+      <XAxis tickLabelAngle={-90} />
+      <YAxis />
+      <LineMarkSeries
+        data={data}
+        color={poopycolor}
+        onValueMouseOver={v => setHoveredNode(v)}
+        onValueMouseOut={v => setHoveredNode(false)}
+      />
+    </FlexibleXYPlot>
+  )
+}
+
 export default props => {
-  const poopycolor = "#593001"
-  const FlexibleXYPlot = makeWidthFlexible(XYPlot)
   const volumeBarData = [
     { x: "0 Poops", y: 24 },
     { x: "1 Poop", y: 207 },
@@ -32,21 +96,21 @@ export default props => {
 
   const dayPoopers = [
     { x: "Mon", y: 79 },
-    { x: "Tues", y: 77 },
-    { x: "Wednes", y: 71 },
-    { x: "Thurs", y: 89 },
+    { x: "Tue", y: 77 },
+    { x: "Wed", y: 71 },
+    { x: "Thu", y: 89 },
     { x: "Fri", y: 72 },
-    { x: "Satur", y: 64 },
+    { x: "Sat", y: 64 },
     { x: "Sun", y: 63 },
   ]
 
   const daySloshers = [
     { x: "Mon", y: 3.7 },
-    { x: "Tues", y: 3.8 },
-    { x: "Wednes", y: 3.9 },
-    { x: "Thurs", y: 3.7 },
+    { x: "Tue", y: 3.8 },
+    { x: "Wed", y: 3.9 },
+    { x: "Thu", y: 3.7 },
     { x: "Fri", y: 3.8 },
-    { x: "Satur", y: 3.8 },
+    { x: "Sat", y: 3.8 },
     { x: "Sun", y: 4.1 },
   ]
 
@@ -167,26 +231,11 @@ export default props => {
             <div className="pooplog__charts">
               <div className="pooplog__chartwrapper">
                 <h3 className="pooplog__chart-title">I.a Poops per day</h3>
-                <FlexibleXYPlot xType="ordinal" height={300}>
-                  <VerticalGridLines />
-                  <HorizontalGridLines />
-                  <XAxis />
-                  <YAxis />
-                  <VerticalBarSeries data={volumeBarData} color={poopycolor} />
-                </FlexibleXYPlot>
+                <BarGraphComponent data={volumeBarData} />
               </div>
               <div className="pooplog__chartwrapper">
                 <h3 className="pooplog__chart-title">I.b Location</h3>
-                <FlexibleXYPlot xType="ordinal" height={300}>
-                  <VerticalGridLines />
-                  <HorizontalGridLines />
-                  <XAxis />
-                  <YAxis />
-                  <VerticalBarSeries
-                    data={locationBarData}
-                    color={poopycolor}
-                  />
-                </FlexibleXYPlot>
+                <BarGraphComponent data={locationBarData} />
               </div>
             </div>
             <div className="pooplog__text">
@@ -215,33 +264,13 @@ export default props => {
                 <h3 className="pooplog__chart-title">
                   II.a Poop Volume by Day
                 </h3>
-                <FlexibleXYPlot
-                  margin={{ bottom: 50 }}
-                  xType="ordinal"
-                  height={300}
-                >
-                  <VerticalGridLines />
-                  <HorizontalGridLines />
-                  <XAxis tickLabelAngle={-90} />
-                  <YAxis />
-                  <VerticalBarSeries data={dayPoopers} color={poopycolor} />
-                </FlexibleXYPlot>
+                <BarGraphComponent data={dayPoopers} />
               </div>
               <div className="pooplog__chartwrapper">
                 <h3 className="pooplog__chart-title">
                   II.b Poop Consistancy by Day
                 </h3>
-                <FlexibleXYPlot
-                  margin={{ bottom: 50 }}
-                  xType="ordinal"
-                  height={300}
-                >
-                  <VerticalGridLines />
-                  <HorizontalGridLines />
-                  <XAxis tickLabelAngle={-90} />
-                  <YAxis />
-                  <LineMarkSeries data={daySloshers} color={poopycolor} />
-                </FlexibleXYPlot>
+                <LineGraphComponent data={daySloshers} />
               </div>
             </div>
             <div className="pooplog__charts">
@@ -249,33 +278,13 @@ export default props => {
                 <h3 className="pooplog__chart-title">
                   II.c Poop Volume by Month
                 </h3>
-                <FlexibleXYPlot
-                  margin={{ bottom: 50 }}
-                  xType="ordinal"
-                  height={300}
-                >
-                  <VerticalGridLines />
-                  <HorizontalGridLines />
-                  <XAxis tickLabelAngle={-90} />
-                  <YAxis />
-                  <VerticalBarSeries data={monthPoopers} color={poopycolor} />
-                </FlexibleXYPlot>
+                <BarGraphComponent data={monthPoopers} />
               </div>
               <div className="pooplog__chartwrapper">
                 <h3 className="pooplog__chart-title">
                   II.d Poop Consistancy by Month
                 </h3>
-                <FlexibleXYPlot
-                  margin={{ bottom: 50 }}
-                  xType="ordinal"
-                  height={300}
-                >
-                  <VerticalGridLines />
-                  <HorizontalGridLines />
-                  <XAxis tickLabelAngle={-90} />
-                  <YAxis />
-                  <LineMarkSeries data={monthSloshers} color={poopycolor} />
-                </FlexibleXYPlot>
+                <LineGraphComponent data={monthSloshers} />
               </div>
             </div>
             <div className="pooplog__text">
@@ -304,17 +313,7 @@ export default props => {
             <div className="pooplog__charts">
               <div className="pooplog__chartwrapper pooplog__chartwrapper--single">
                 <h3 className="pooplog__chart-title">III.a Poops by hour</h3>
-                <FlexibleXYPlot
-                  xType="ordinal"
-                  margin={{ bottom: 50 }}
-                  height={300}
-                >
-                  <VerticalGridLines />
-                  <HorizontalGridLines />
-                  <XAxis tickLabelAngle={-90} />
-                  <YAxis />
-                  <VerticalBarSeries data={timePoops} color={poopycolor} />
-                </FlexibleXYPlot>
+                <BarGraphComponent data={timePoops} />
               </div>
             </div>
             <div className="pooplog__text">

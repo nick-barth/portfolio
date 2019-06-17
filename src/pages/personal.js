@@ -18,6 +18,7 @@ export default props => {
             <li>
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://cmoreira.net/visited-countries-map/?map=5cde8fc2e1370"
               >
                 Travel
@@ -27,6 +28,7 @@ export default props => {
             <li>
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.goodreads.com/user/show/60480445-nick-barth"
               >
                 Reading
@@ -35,7 +37,11 @@ export default props => {
             <li>Gym</li>
             <li>Cooking</li>
             <li>
-              <a target="_blank" href="https://www.hackyourfuture.net/">
+              <a
+                target="_blank"
+                href="https://www.hackyourfuture.net/"
+                rel="noopener noreferrer"
+              >
                 Volunteering
               </a>
             </li>
@@ -49,6 +55,7 @@ export default props => {
               <a
                 target="_blank"
                 href="https://open.spotify.com/user/1215590034?si=NX0c4GtASiGR5SecTg1LTQ"
+                rel="noopener noreferrer"
               >
                 Music
               </a>
@@ -72,7 +79,11 @@ export default props => {
             <li>Laughing</li>
             <li>Public Transport</li>
             <li>
-              <a target="_blank" href="https://www.reddit.com/user/nickinkorea">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.reddit.com/user/nickinkorea"
+              >
                 Reddit
               </a>
             </li>

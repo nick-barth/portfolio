@@ -4,11 +4,6 @@ import Poop from "../../assets/imgs/poop.svg"
 
 export class MapContainer extends React.Component {
   render() {
-    const myLatLng = {
-      lat: 42.886386,
-      lng: -78.878176,
-    }
-
     const markers = [
       {
         position: {
