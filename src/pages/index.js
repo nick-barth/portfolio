@@ -14,10 +14,10 @@ export default props => {
           }}
         />
         <div className="home__content">
-          <h2 className="home__title">Sup Nerds</h2>
+          <h2 className="home__title">Hello</h2>
           <div className="home__byline">
-            Welcome to the personal site of Nick Barth. Fullstack developer, and
-            overall cool guy.
+            Welcome to the personal site of Nick Barth. Fullstack developer,
+            teacher, builder.
           </div>
           <div className="home__byline home__byline--location">
             Currently based in{" "}
