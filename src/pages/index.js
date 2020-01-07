@@ -14,7 +14,7 @@ export default props => {
           }}
         />
         <div className="home__content">
-          <h2 className="home__title">Hello</h2>
+          <h2 className="home__title">Hello!</h2>
           <div className="home__byline">
             Welcome to the personal site of Nick Barth. Fullstack developer,
             teacher, builder.
