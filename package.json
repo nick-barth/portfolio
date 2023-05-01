@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "gatsby": "^2.4.3",
+    "gatsby": "^5.9.0",
     "gatsby-background-image": "^0.5.6",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-google-analytics": "^2.0.20",
@@ -22,7 +22,7 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-plugin-sharp": "^2.14.4",
     "gatsby-source-filesystem": "^2.0.33",
     "gatsby-transformer-sharp": "^2.1.19",
     "google-map-react": "^1.1.4",
